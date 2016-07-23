@@ -3,7 +3,7 @@ export default function (f, p, promise) {
 	return promise
 }
 
-class Map {
+export class Map {
 	constructor (f, promise) {
 		this.f = f
 		this.promise = promise

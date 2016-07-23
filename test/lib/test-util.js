@@ -6,6 +6,11 @@ export function assertSame (ap, bp) {
 	return ap.then(a => bp.then(b => assert(a === b)))
 }
 
+export function assertSameRejected (ap, bp) {
+	return ap.then(assert.ifError,
+		a => bp.then(assert.ifError, b => assert(a === b)))
+}
+
 export function throwingIterable (e) {
 	return new FakeIterable(new ThrowingIterator(e))
 }
